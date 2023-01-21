@@ -1,7 +1,8 @@
-from django.http import request
 from django.shortcuts import render
+from .forms import CapturaForm
 
 # Create your views here .
 
-def captura (render):
-    return render(request, "core/captura.html")
+def captura (request):
+    captura_form = CapturaForm()
+    return render(request, "registration/captura.html", {'form':captura_form})
