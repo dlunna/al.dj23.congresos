@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'myapps.registration.apps.RegistrationConfig',
+    'myapps.myregister.apps.MyRegisterConfig',
     #
     'ckeditor',
 

@@ -3,6 +3,8 @@ from .forms import CapturaForm
 from django.urls import reverse
 from django.core.mail import EmailMessage
 
+from django.views.generic.edit import CreateView
+
 # Create your views here .
 
 def captura (request):
@@ -41,3 +43,4 @@ def captura (request):
                 return redirect(reverse('reg_captura')+"?fail")
     
     return render(request, "registration/captura.html", {'form':captura_form})
+

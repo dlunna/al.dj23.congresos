@@ -2,14 +2,14 @@ from django.db import models
 
 # Create your models here.
 
-class RegisterModel(models.Model):
+class MyRegisterModel(models.Model):
     # se agrega el verbose name para cambiar el nombre a español en el panel de admon
-    nombre = models.CharField(max_length=40, verbose_name= "nombre")
-    paterno = models.CharField(max_length=40, verbose_name= "paterno")
-    materno = models.CharField(max_length=40, verbose_name= "materno")
-    universidad = models.CharField(max_length=80, verbose_name= "universidad")
-    celular = models.CharField(max_length=80, verbose_name= "celular")
-    correo = models.EmailField(max_length=40, verbose_name= "correo")
+    name = models.CharField(max_length=40, verbose_name= "name")
+    lastname = models.CharField(max_length=40, verbose_name= "lastname")
+    institution = models.CharField(max_length=80, verbose_name= "institution")
+    #position = models.CharField(max_length=80, verbose_name= "position")    
+    celphone = models.CharField(max_length=80, verbose_name= "celphone")
+    email = models.EmailField(max_length=40, verbose_name= "email")
 
     #Añade automaticamente la Fecha de creacion
     created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
@@ -27,4 +27,4 @@ class RegisterModel(models.Model):
     # En el panel de admin
     # en lugar del nombre raro que muestre el titulo
     def __str__(self):
-        return self.paterno
+        return self.lastname

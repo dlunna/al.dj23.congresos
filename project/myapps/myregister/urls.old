@@ -1,0 +1,12 @@
+from django.urls import path
+#from . import views as reg_views
+#from .views import MyRegisterModel
+#from views import MyRegisterListView
+from .views import MyRegisterListView, MyRegisterDetailView, MyRegisterCreateView
+
+urlpatterns = [
+    path('', MyRegisterListView.as_view(), name="MyRegisterLV"),
+    path('<int:pk>/', MyRegisterDetailView.as_view(), name="MyRegisterDV"),
+    path('nuevo', MyRegisterCreateView.as_view(), name="MyRegisterCV"),
+    #path('lista', reg_views.captura, name="reg_nuevo"),
+]

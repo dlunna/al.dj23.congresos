@@ -18,6 +18,7 @@ from django.urls import path, include
 
 from core import views as core_views
 #from myapps.registration import views as registration_views
+from myapps.myregister.urls import myregister_patterns
 
 
 urlpatterns = [
@@ -25,4 +26,6 @@ urlpatterns = [
     path('', core_views.root, name="root"),
     #path('registro/', registration_views.register, name="register"),
     path('registro/', include('myapps.registration.urls')),
+    #path('miregistro/', include('myapps.myregister.urls')),
+    path('miregistro/', include(myregister_patterns) ),
 ]
