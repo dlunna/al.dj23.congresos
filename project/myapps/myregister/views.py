@@ -1,4 +1,4 @@
-#from django.shortcuts import render
+from django.shortcuts import render
 from importlib import import_module
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -20,7 +20,8 @@ class MyRegisterCreateView(CreateView):
     model = MyRegisterModel
     form_class=MyRegisterForm    
     #fields = ['name']
-    success_url = reverse_lazy('myregister:list')
+    #success_url = reverse_lazy('myregister:list')
+    success_url = reverse_lazy('myregister:bot')
     #def get_success_url(self):
     #    return reverse('myregister:list')
 
@@ -33,3 +34,8 @@ class MyRegisterUpdateView(UpdateView):
 class MyRegisterDeleteView(DeleteView):
     model = MyRegisterModel
     success_url = reverse_lazy('myregister:list')
+
+def BotView (request):
+    #para debugger si es get o POST
+    return render(request, "myregister/bot.html")
+
