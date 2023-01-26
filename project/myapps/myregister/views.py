@@ -9,12 +9,10 @@ from .models import MyRegisterModel
 from .forms import MyRegisterForm
 
 class MyRegisterListView(ListView):
-
     model = MyRegisterModel
     paginate_by = 100  # if pagination is desired
 
 class MyRegisterDetailView(DetailView):
-
     model = MyRegisterModel
     #paginate_by = 100  # if pagination is desired
 

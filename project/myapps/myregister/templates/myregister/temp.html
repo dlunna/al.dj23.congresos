@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    </head>
+    <body>
+
+<!--
+        <form method="post">{#% csrf_token %#}
+            {{ form.as_p }}
+            <input type="submit" value="Save">
+        </form>
+    -->
+        <hr>
+
+
+        <div class="container px-5 my-5">
+
+
+            <form method="post">{% csrf_token %}
+
+
+            <div class="form-floating mb-3">
+                <input class="form-control" id="id_name" type="text" placeholder="Nombre" data-sb-validations="required" />
+                <label for="id_name">Nombre</label>
+                <div class="invalid-feedback" data-sb-feedback="id_name:required">El nombre es requerido</div>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="id_lastname" type="text" placeholder="Apellidos" data-sb-validations="required" />
+                <label for="id_lastname">Apellidos</label>
+                <div class="invalid-feedback" data-sb-feedback="id_lastname:required">El apellido es requerido</div>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="id_emailwork" type="email" placeholder="E-mail institucional" data-sb-validations="required,email" />
+                <label for="id_emailwork">E-mail institucional</label>
+                <div class="invalid-feedback" data-sb-feedback="id_emailwork:required">E-mail institucional is required.</div>
+                <div class="invalid-feedback" data-sb-feedback="id_emailwork:email">E-mail institucional Email is not valid.</div>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="id_emailpersonal" type="email" placeholder="E-mail personal" data-sb-validations="required,email" />
+                <label for="id_emailpersonal">E-mail personal</label>
+                <div class="invalid-feedback" data-sb-feedback="id_emailpersonal:required">E-mail personal is required.</div>
+                <div class="invalid-feedback" data-sb-feedback="id_emailpersonal:email">E-mail personal Email is not valid.</div>
+            </div>
+            <div class="form-floating mb-3">
+                <select class="form-select" id="id_institution" aria-label="Institución">
+
+                    <option value="Centro Hidalguense de Estudios Superiores">Centro Hidalguense de Estudios Superiores</option>
+                    <option value="Centro Regional de Educación Normal Benito Juárez">Centro Regional de Educación Normal Benito Juárez</option>
+                    <option value="Centro Universitario  Continental">Centro Universitario  Continental</option>
+                    <option value="Centro Universitario Allende">Centro Universitario Allende</option>
+                    <option value="Centro Universitario del Oriente de Hidalgo">Centro Universitario del Oriente de Hidalgo</option>
+                    <option value="Centro Universitario Hidalguense">Centro Universitario Hidalguense</option>
+                    <option value="Centro Universitario Metropolitano">Centro Universitario Metropolitano</option>
+                    <option value="Centro Universitario Siglo XXI">Centro Universitario Siglo XXI</option>
+                    <option value="Centro Universitario Vasco de Quiroga de Huejutla">Centro Universitario Vasco de Quiroga de Huejutla</option>
+                    <option value="Colegio Anáhuac">Colegio Anáhuac</option>
+                    <option value="Consorcio Educativo Londres-UCLAH">Consorcio Educativo Londres-UCLAH</option>
+                    <option value="Escuela Bancaria y Comercial, Campus Pachuca">Escuela Bancaria y Comercial, Campus Pachuca</option>
+                    <option value="Escuela de Música del Estado de Hidalgo">Escuela de Música del Estado de Hidalgo</option>
+                    <option value="Escuela Normal Superior del Estado de Hidalgo">Escuela Normal Superior del Estado de Hidalgo</option>
+                    <option value="Escuela Normal Superior Miguel Hidalgo">Escuela Normal Superior Miguel Hidalgo</option>
+                    <option value="Escuela Normal Valle del Mezquital">Escuela Normal Valle del Mezquital</option>
+                    <option value="Escuela Superior de Actopan">Escuela Superior de Actopan</option>
+                    <option value="Escuela Superior de Atotonilco de Tula">Escuela Superior de Atotonilco de Tula</option>
+                    <option value="Escuela Superior de Ciudad Sahagún">Escuela Superior de Ciudad Sahagún</option>
+                    <option value="Escuela Superior de Huejutla">Escuela Superior de Huejutla</option>
+                    <option value="Escuela Superior de Tepeji del Río">Escuela Superior de Tepeji del Río</option>
+                    <option value="Escuela Superior de Tizayuca">Escuela Superior de Tizayuca</option>
+                    <option value="Escuela Superior Tlahuelilpan">Escuela Superior Tlahuelilpan</option>
+                    <option value="Escuela Superior Zimapán">Escuela Superior Zimapán</option>
+                    <option value="Instituto de Administración Pública del Estado de Hidalgo">Instituto de Administración Pública del Estado de Hidalgo</option>
+                    <option value="Instituto de Ciencias y Estudios Superiores de Hidalgo">Instituto de Ciencias y Estudios Superiores de Hidalgo</option>
+                    <option value="Instituto de Estudios Superiores ISIMA, Plantel Pachuca">Instituto de Estudios Superiores ISIMA, Plantel Pachuca</option>
+                    <option value="Instituto Tecnológico de Huejutla">Instituto Tecnológico de Huejutla</option>
+                    <option value="Instituto Tecnológico de la Construcción (ITC), Campus Hidalgo">Instituto Tecnológico de la Construcción (ITC), Campus Hidalgo</option>
+                    <option value="Instituto Tecnológico de Pachuca">Instituto Tecnológico de Pachuca</option>
+                    <option value="Instituto Tecnológico Latinoamericano, Campus Central">Instituto Tecnológico Latinoamericano, Campus Central</option>
+                    <option value="Instituto Tecnológico Latinoamericano, Campus Tula">Instituto Tecnológico Latinoamericano, Campus Tula</option>
+                    <option value="Instituto Tecnológico Superior de Huichapan">Instituto Tecnológico Superior de Huichapan</option>
+                    <option value="Instituto Tecnológico Superior del Occidente del Estado de Hidalgo (ITSOEH)">Instituto Tecnológico Superior del Occidente del Estado de Hidalgo (ITSOEH)</option>
+                    <option value="Instituto Tecnológico Superior del Oriente del Estado de Hidalgo">Instituto Tecnológico Superior del Oriente del Estado de Hidalgo</option>
+                    <option value="Tecnológico de Monterrey, Campus Hidalgo">Tecnológico de Monterrey, Campus Hidalgo</option>
+                    <option value="Universidad Autónoma del Estado de Hidalgo (UAEH)">Universidad Autónoma del Estado de Hidalgo (UAEH)</option>
+                    <option value="Universidad Científica Latino Americana de Hidalgo">Universidad Científica Latino Americana de Hidalgo</option>
+                    <option value="Universidad del Futbol y Ciencias del Deporte">Universidad del Futbol y Ciencias del Deporte</option>
+                    <option value="Universidad del Nuevo México">Universidad del Nuevo México</option>
+                    <option value="Universidad del Nuevo México">Universidad del Nuevo México</option>
+                    <option value="Universidad ETAC Campus Tulancingo">Universidad ETAC Campus Tulancingo</option>
+                    <option value="Universidad Iberomexicana de Hidalgo">Universidad Iberomexicana de Hidalgo</option>
+                    <option value="Universidad Interamericana para el Desarrollo (UNID) Sede Pachuca">Universidad Interamericana para el Desarrollo (UNID) Sede Pachuca</option>
+                    <option value="Universidad Interamericana para el Desarrollo (UNID) Sede Tula">Universidad Interamericana para el Desarrollo (UNID) Sede Tula</option>
+                    <option value="Universidad La Salle de Pachuca">Universidad La Salle de Pachuca</option>
+                    <option value="Universidad Pedagógica Nacional (UPN) U-131 Pachuca">Universidad Pedagógica Nacional (UPN) U-131 Pachuca</option>
+                    <option value="Universidad Politécnica de Francisco I.Madero">Universidad Politécnica de Francisco I.Madero</option>
+                    <option value="Universidad Politécnica de Huejutla">Universidad Politécnica de Huejutla</option>
+                    <option value="Universidad Politécnica de Pachuca">Universidad Politécnica de Pachuca</option>
+                    <option value="Universidad Politécnica de Tulancingo">Universidad Politécnica de Tulancingo</option>
+                    <option value="Universidad Politécnica Metropolitana de Hidalgo">Universidad Politécnica Metropolitana de Hidalgo</option>
+                    <option value="Universidad Siglo XXI Pachuca">Universidad Siglo XXI Pachuca</option>
+                    <option value="Universidad Tecnológica de la Huasteca Hidalguense">Universidad Tecnológica de la Huasteca Hidalguense</option>
+                    <option value="Universidad Tecnológica de la Sierra Hidalguense">Universidad Tecnológica de la Sierra Hidalguense</option>
+                    <option value="Universidad Tecnológica de Tula-Tepeji">Universidad Tecnológica de Tula-Tepeji</option>
+                    <option value="Universidad Tecnológica de Tulancingo">Universidad Tecnológica de Tulancingo</option>
+                    <option value="Universidad Tecnológica de Valle del Mezquital">Universidad Tecnológica de Valle del Mezquital</option>
+
+
+                </select>
+                <label for="id_institution">Institución</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="id_grade" type="text" placeholder="Grados académicos" data-sb-validations="required" />
+                <label for="id_grade">Grados académicos</label>
+                <div class="invalid-feedback" data-sb-feedback="id_grade:required">Grados académicos is required.</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label d-block">Nivel de SNI</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="nivel1" type="radio" name="newField8" data-sb-validations="" />
+                    <label class="form-check-label" for="nivel1">Nivel 1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="nivel2" type="radio" name="newField8" data-sb-validations="" />
+                    <label class="form-check-label" for="nivel2">Nivel 2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="nivel3" type="radio" name="newField8" data-sb-validations="" />
+                    <label class="form-check-label" for="nivel3">Nivel 3</label>
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="id_celphone" type="text" placeholder="Número telefónico" data-sb-validations="required" />
+                <label for="id_celphone">Número telefónico</label>
+                <div class="invalid-feedback" data-sb-feedback="id_celphone:required">Número telefónico is required.</div>
+            </div>
+
+            <div class="d-grid">
+                <input type="submit" class="btn btn-primary btn-block" value="Guardar">
+            </div>
+
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+</body>
+</html>

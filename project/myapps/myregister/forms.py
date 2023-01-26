@@ -5,10 +5,10 @@ class MyRegisterForm(forms.ModelForm):
 
     class Meta:
         model = MyRegisterModel
-        fields = ['name', 'lastname', 'email']
-        #fields = ['name', 'lastname', 'institution', 'celphone', 'email']
+        fields = ['name', 'lastname', 'institution', 'emailpersonal', 'emailwork', 'celphone', 'grade', 'snilevel']
+        
         forms.widgets = {
             'name': forms.TextInput(attrs={'class':'form-control'}),
             'lastname': forms.TextInput(attrs={'class':'form-control'}),
-            'email': forms.TextInput(attrs={'class':'form-control'}),
+            'emailpersonal': forms.TextInput(attrs={'class':'form-control'}),
         }

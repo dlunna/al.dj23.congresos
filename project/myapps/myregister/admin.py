@@ -6,6 +6,6 @@ from .models import MyRegisterModel
 
 class MyRegisterAdmin(admin.ModelAdmin):
     readonly_fields = ('created', 'updated')
-    list_display = ('lastname', 'name', 'email')
+    list_display = ('name', 'lastname', 'emailwork')
 
 admin.site.register(MyRegisterModel, MyRegisterAdmin)

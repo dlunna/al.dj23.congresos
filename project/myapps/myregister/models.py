@@ -8,8 +8,11 @@ class MyRegisterModel(models.Model):
     lastname = models.CharField(max_length=40, verbose_name= "lastname")
     institution = models.CharField(max_length=80, verbose_name= "institution")
     #position = models.CharField(max_length=80, verbose_name= "position")    
-    celphone = models.CharField(max_length=80, verbose_name= "celphone")
-    email = models.EmailField(max_length=40, verbose_name= "email")
+    emailpersonal = models.EmailField(max_length=40, verbose_name= "emailpersonal", null=True, blank=True)
+    emailwork = models.EmailField(max_length=40, verbose_name= "emailwork", null=True, blank=True)
+    celphone = models.CharField(max_length=80, verbose_name= "celphone", null=True, blank=True)
+    grade = models.CharField(max_length=40, verbose_name= "grade", null=True, blank=True)
+    snilevel = models.CharField(max_length=40, verbose_name= "snilevel", null=True, blank=True)
 
     #Añade automaticamente la Fecha de creacion
     created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
