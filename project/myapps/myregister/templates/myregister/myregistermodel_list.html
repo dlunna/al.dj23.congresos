@@ -14,7 +14,11 @@
         {% for item in object_list %}
           <div class="row mt-3">
               <div class="col-md-9 mx-auto">
-                  {{item.name}}
+                  <p>{{item.id}} |
+                  {{item.name}} | 
+                  <a href="{% url 'myregister:update' item.id %}"> Editar </a> |
+                  <a href="{% url 'myregister:delete' item.id %}"> Borrar </a></p>
+
               </div>
           </div>
         {% endfor %}
