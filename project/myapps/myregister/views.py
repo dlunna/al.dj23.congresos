@@ -38,4 +38,3 @@ class MyRegisterDeleteView(DeleteView):
 def BotView (request):
     #para debugger si es get o POST
     return render(request, "myregister/bot.html")
-

@@ -24,6 +24,7 @@ from myapps.myregister.urls import myregister_patterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', core_views.root, name="root"),
+    path('programa/', core_views.ProgramaView, name="programa"),
     #path('registro/', registration_views.register, name="register"),
     path('registro/', include('myapps.registration.urls')),
     #path('miregistro/', include('myapps.myregister.urls')),

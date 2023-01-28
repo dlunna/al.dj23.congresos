@@ -1,0 +1,72 @@
+{% load static %}
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Primer Encuentro de Investigadores Hidalguenses SNI">
+    <meta name="author" content="DTIC's - UPP">
+
+    <title>{% block title %} {% endblock %}</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/jumbotron/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'core/vendor/twbs/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core/vendor/components/font-awesome/css/all.css' %}" rel="stylesheet">
+
+
+    <!-- Favicons -->
+    <link rel="icon" href="{% static 'core/img/favicon-sni.png' %}">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      .masthead {
+          position: relative;
+          overflow: hidden;
+          padding-top: calc(1rem + 10px);
+          padding-bottom: 7rem;
+          background-image: url("{% static 'core/img/educacion-05.png' %}");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-attachment: scroll;
+          background-size:contain ;
+          background-color: #691A32;
+        }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+  </head>
+  <body>
+      <main>
+          <div class="masthead"></div>
+
+
+
+  <div class="container py-4">
+    {% block contenido %}{% endblock %}
+
+    <footer class="pt-3 mt-4 text-muted border-top">
+        <a href="http://www.hgo.sep.gob.mx/">Secretaría de Educación Pública</a> | <a href="https://www.upp.edu.mx">Universidad Politécnica de Pachuca</a> &copy; 2023
+    </footer>
+  </div>
+</main>
+
+
+    
+  </body>
+</html>

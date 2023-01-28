@@ -1,229 +1,116 @@
 {% load static %}
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Primer Encuentro de Investigadores Hidalguenses SNI">
+    <meta name="author" content="DTIC's - UPP">
 
-<head>
-  <title>{% block title %} {% endblock %} | Lovely Spa</title>
+    <title>1er Encuentro de Investigadores Hidalguenses</title>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-  <Xlink rel="stylesheet" href="{% static 'core/fonts/icomoon/style.css' %}">
-  <Xlink rel="stylesheet" href="{% static 'core/css/magnific-popup.css' %}">
-  <Xlink rel="stylesheet" href="{% static 'core/css/jquery-ui.css' %}">
-  <Xlink rel="stylesheet" href="{% static 'core/css/owl.carousel.min.css' %}">
-  <Xlink rel="stylesheet" href="{% static 'core/css/owl.theme.default.min.css' %}">
-  <Xlink rel="stylesheet" href="{% static 'core/css/bootstrap-datepicker.css' %}">
-  <Xlink rel="stylesheet" href="{% static 'core/css/animate.css' %}">
-  <Xlink rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
-  <Xlink rel="stylesheet" href="{% static 'core/fonts/flaticon/font/flaticon.css' %}">
-  <Xlink rel="stylesheet" href="{% static 'core/css/aos.css' %}">
-
-  <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Work+Sans:300,400,700" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'core/vendor/twbs/bootstrap/dist/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'core/vendor/fortawesome/font-awesome/css/all.min.css' %}">
-  <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
-  <link ref="stylesheet" href="{% static 'employee/css/custom_ckeditor.css' %}">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/jumbotron/">
   
 
-</head>
+    <!-- Bootstrap core CSS -->
 
-<body style=" background-image: url('{% static 'core/images/spa-background.jpg' %}');">
+<link href="{% static 'core/vendor/twbs/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
 
-    <div class="site-wrap">
-
-      <div class="site-mobile-menu">
-        <div class="site-mobile-menu-header">
-          <div class="site-mobile-menu-close mt-3">
-            <span class="icon-close2 js-menu-toggle"></span>
-          </div>
-        </div>
-
-        <a href="{% url 'root' %}">- HOME -</a>
-
-        <div class="site-mobile-menu-body"></div>
-      </div> <!-- .site-mobile-menu -->
+    <!-- Favicons -->
+    <link rel="icon" href="{% static 'core/img/favicon-sni.png' %}">
 
 
-      <div class="site-navbar-wrap js-site-navbar bg-white">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
 
-        <div class="container">
-          <div class="site-navbar bg-light">
-            <div class="py-1">
-              <div class="row align-items-center">
-                <div class="col-2">
-                  <a href="{% url 'root' %}"><img src="{% static 'core/images/lovely_brand.png'%}" /></a>
-                </div>
-                <div class="col-10">
-                  <nav class="site-navigation text-right" role="navigation">
-                    <div class="container">
-                      <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#"
-                          class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a>
-                      </div>
+      .masthead {
+  position: relative;
+  overflow: hidden;
+  padding-top: calc(1rem + 10px);
+  padding-bottom: 7rem;
+  /*background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);*/
+  background-image: url("{% static 'core/img/educacion-05.png' %}");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  /*background-size:  cover;*/
+  background-size:contain ;
+  background-color: #691A32;
+}
 
-                      <ul class="site-menu js-clone-nav d-none d-lg-block">
-                        <li {% if request.path == "/spa/" %}class="active" {% endif %}> <a
-                            href="{#% url 'home' %#}">Portada</a> </li>
-                        <li {% if request.path == "/paquetes/" %}class="active" {% endif %}> <a
-                            href="{% url 'packages' %}">Paquetes</a> </li>
-                        <li {% if request.path == "/spa/acercade/" %}class="active" {% endif %}> <a
-                            href="{% url 'about' %}">Acerca de</a> </li>
-                        <li {% if request.path == "/servicios/" %}class="active" {% endif %}> <a
-                            href="{#% url 'services_home' %#}">Servicios</a> </li>
-                            <!-- SLICE recorta los 6 primeros para comprobar la cadena -->
-                        <li {% if request.path|slice:":7" == "/notas/" %}class="active" {% endif %}> <a
-                            href="{#% url 'blog_home' %#}">Notas</a> </li>
-                        <li {% if request.path == "/contacto/" %}class="active" {% endif %}> <a
-                            href="{#% url 'contact' %#}">Contacto</a> </li>
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
 
-                        {% if request.path == "/" %}
-                        <li> <a href="admin/">L</a> </li>
-                        {% endif %}
-                      </ul>
+  
+    </style>
 
-                    </div>
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </div>
+    
+  </head>
+  <body>
+    
+<main>
+
+<div class="masthead"></div>
+
+
+
+
+  <div class="container py-4">
+    
+    <!--
+    <header class="pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img"><title>Bootstrap</title><path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path></svg>
+        <span class="fs-4">Jumbotron example</span>
+      </a>
+    </header>
+-->
+
+    <div class="p-5 mb-4 .bg-light rounded-3">
+      <div class="container-fluid py-5">
+          <img src="{% static 'core/img/logo-web.png' %}" alt="Encuentro SNI" class="img-fluid">
+        <!--<h1 class="display-5 fw-bold">Custom jumbotron</h1>-->
+        <p class="col-md-8 fs-4">Bienvenido, bienvenida al Primer Encuentro Hidalguense de Investigadores SNI.</p>
+        <!--<button class="btn btn-primary btn-lg" type="button">Registro</button>-->
+        <a class="btn btn-warning btn-lg mt-5" href="{% url 'myregister:create' %}">Registro</a>
+      </div>
+    </div>
+
+    <div class="row align-items-md-stretch">
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h2>Primer Encuentro</h2>
+          <p>Es un espacio para la exposición de la ciencia, tecnología e innovación que se realiza en el Estado de Hidalgo para los Investigadores que pertenecen al SNI y laboran en las instituciones de educación superior estatales.</p>
+          <!--<button class="btn btn-outline-light" type="button">Example button</button>-->
         </div>
       </div>
-
-      {%block carousel%}{% endblock %}
-
-      {% block content %} {% endblock %}
-
-      {% if request.path == "/services/" %}
-      <hr />{% endif %}
-
-
-      <!--
-    {{request.path}}
-    Si dejamos esta linea tal cual nos da la ruta en la que nos encontramos
--->
-
-      {% block legales %} {% endblock %}
-
-      <footer class="site-footer">
-        <div class="container">
-
-
-          <div class="row">
-            <div class="col-md-4">
-              <h3 class="footer-heading mb-4 text-white">Ubicación</h3>
-              <p>Boulevard Santa Catarina, Plaza Mitika local 6. Pitahayas 42082 Pachuca de Soto, México.</p>
-              <p><i class="fa-solid fa-phone"></i> 771 110 1023</p>
-              <!--<p><a href="#" class="btn btn-primary rounded text-white px-4">Read More</a></p>-->
-            </div>
-
-            <div class="col-md-5 ml-auto">
-              <div class="row">
-
-                <!--
-              <div class="col-md-6">
-                <h3 class="footer-heading mb-4 text-white">Quick Menu</h3>
-                <ul class="list-unstyled">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Our Trainers</a></li>
-                  <li><a href="#">News</a></li>
-                  <li><a href="#">Contacts</a></li>
-                  <li><a href="#">The Club</a></li>
-                  <li><a href="#">Privacy</a></li>
-                </ul>
-              </div>
-
-              <div class="col-md-6">
-                <h3 class="footer-heading mb-4 text-white">Program</h3>
-                <ul class="list-unstyled">
-                  <li><a href="#">Body Building</a></li>
-                  <li><a href="#">Morning Energy</a></li>
-                  <li><a href="#">Stretching</a></li>
-                  <li><a href="#">Weight Lifting</a></li>
-                </ul>
-              </div>
--->
-              </div>
-            </div>
-
-
-
-            <div class="col-md-2">
-              <div class="col-md-12">
-                <h3 class="footer-heading mb-4 text-white">Redes sociales</h3>
-                
-              </div>
-              <div class="col-md-12">
-                <p>
-
-                  {% if LINK_FACEBOOK %}
-                  <a href="{{ LINK_FACEBOOK }}" class="pb-2 pr-2 pl-0"><i class="fa-brands fa-facebook"></i></a>
-                  {% endif %}
-                  {% if LINK_TWITTER %}
-                  <a href="{{ LINK_TWITTER }}" class="pb-2 pr-2 pl-0"><i class="fa-brands fa-twitter"></i></a>
-                  {% endif %}
-                  {% if LINK_INSTAGRAM %}
-                  <a href="{{ LINK_INSTAGRAM }}" class="pb-2 pr-2 pl-0"><i class="fa-brands fa-instagram"></i></a>
-                  {% endif %}
-                  {% if LINK_YOUTUBE %}
-                  <a href="{{ LINK_YOUTUBE }}" class="pb-2 pr-2 pl-0"><i class="fa-brands fa-youtube"></i></a>
-                  {% endif %}
-                  {% if LINK_TIKTOK %}
-                  <a href="{{ LINK_TIKTOK }}" class="pb-2 pr-2 pl-0"><i class="fa-brands fa-tiktok"></i></a>
-                  {% endif %}
-                  {% if LINK_GMAIL %}
-                  <a href="mailto:{{ LINK_GMAIL }}" class="pb-2 pr-2 pl-0"><i class="fa-solid fa-envelope"></i></a>
-                  {% endif %}
-                  {% if LINK_WHATSAPP %}
-                  <a href="https://wa.me/{{ LINK_WHATSAPP }}" class="pb-2 pr-2 pl-0"><i class="fa-brands fa-whatsapp-square"></i></a>
-                  {% endif %}
-                  {% if LINK_TELEGRAM %}
-                  <a href="https://telegram.me/{{ LINK_TELEGRAM }}" class="pb-2 pr-2 pl-0"><i class="fa-brands fa-telegram"></i></a>
-                  {% endif %}
-
-                  
-                  <!--
-                <a href="#" class="p-2"><span class="icon-twitter"></span></a>
-                <a href="#" class="p-2"><span class="icon-instagram"></span></a>
-                <a href="#" class="p-2"><span class="icon-vimeo"></span></a>
-                -->
-
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="row pt-5 mt-5 text-center">
-            <div class="col-md-12">
-              <p>
-                Copyright &copy; <script>
-                  document.write(new Date().getFullYear());
-                </script> Derechos reservados | Made with <i class="fa-solid fa-heart"></i><i class="icon-heart text-danger"
-                  aria-hidden="true"></i> 
-              </p>
-              <p>
-                {% load webpages_extras %}
-                {% get_page_list as page_list %}
-                {% for page in page_list %}
-                <!--<a href="{#% url 'page' page.id %#}">{{page.title}}</a>-->
-                <a href="{% url 'page' page.id page.title|slugify %}">{{page.title}}</a>
-                {% if not forloop.last %} | {% endif %}
-                {% endfor %}
-              </p>
-
-            </div>
-
-          </div>
+      <div class="col-md-6">
+        <div class="h-100 p-5 bg-light border rounded-3">
+          <h2>Programa</h2>
+          <p>Haga su registro para acceder al programa del evento</p>
+          <a class="btn btn-outline-secondary btn-lg mt-5" href="{% url 'myregister:create' %}">Registro</a>
+          
         </div>
-      </footer>
+      </div>
     </div>
- 
 
-    <script src="{% static 'core/vendor/twbs/bootstrap/js/dist/carousel.js' %}"></script>
-    <script src="{% static 'core/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.js' %}"></script>
+    <footer class="pt-3 mt-4 text-muted border-top">
+        <a href="http://www.hgo.sep.gob.mx/">Secretaría de Educación Pública</a> | <a href="https://www.upp.edu.mx">Universidad Politécnica de Pachuca</a> &copy; 2023
+    </footer>
+  </div>
+</main>
 
-    </body>
 
+    
+  </body>
 </html>
