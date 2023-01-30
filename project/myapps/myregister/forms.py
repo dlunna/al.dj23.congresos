@@ -12,17 +12,18 @@ class MyRegisterForm(forms.ModelForm):
     institution= forms.CharField(label="Institución", required= True, widget=forms.TextInput(
         attrs={'class':'form-control', 'placeholder':'Escriba su institución de procedencia'}
     ))
-    emailwork= forms.EmailField(label="Correo electronico institucional", required= True, widget=forms.TextInput(
+    emailwork= forms.EmailField(label="Correo institucional", required= True, widget=forms.TextInput(
         attrs={'class':'form-control', 'placeholder':'Escriba su correo institucional'}
     ))
-    emailpersonal= forms.EmailField(label="Correo electrónico personal", required= True, widget=forms.TextInput(
+    emailpersonal= forms.EmailField(label="Correo personal", required= True, widget=forms.TextInput(
         attrs={'class':'form-control', 'placeholder':'Escriba su correo personal'}
     ))
-    celphone= forms.CharField(label="Contacto", required= True, widget=forms.TextInput(
+    celphone= forms.CharField(label="Telefóno de contacto", required= True, widget=forms.TextInput(
         attrs={'class':'form-control', 'placeholder':'Escriba su número telefónico de contacto'}
-    ), min_length=10, max_length=50 )
-    grade= forms.CharField(label="Grado", required= True, widget=forms.TextInput(
-        attrs={'class':'form-control', 'placeholder':'Escribe su grado académico'}
+    ), min_length=10, max_length=30 )
+    
+    grade= forms.CharField(label="Grados", required= True, widget=forms.TextInput(
+        attrs={'class':'form-control', 'placeholder':'Grados académicos con los que cuenta'}
     ))
     snilevel= forms.CharField(label="SNI", required= True, widget=forms.TextInput(
         attrs={'class':'form-control', 'placeholder':'Escriba su nivel de SNI'}
@@ -35,8 +36,8 @@ class MyRegisterForm(forms.ModelForm):
             'name', 
             'lastname', 
             'institution', 
-            'emailpersonal', 
             'emailwork', 
+            'emailpersonal', 
             'celphone', 
             'grade', 
             'snilevel'

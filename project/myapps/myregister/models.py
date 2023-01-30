@@ -4,14 +4,14 @@ from django.db import models
 
 class MyRegisterModel(models.Model):
     # se agrega el verbose name para cambiar el nombre a español en el panel de admon
-    name = models.CharField(max_length=40, verbose_name= "name")
-    lastname = models.CharField(max_length=40, verbose_name= "lastname")
+    name = models.CharField(max_length=50, verbose_name= "name")
+    lastname = models.CharField(max_length=50, verbose_name= "lastname")
     institution = models.CharField(max_length=80, verbose_name= "institution")
     #position = models.CharField(max_length=80, verbose_name= "position")    
     emailpersonal = models.EmailField(max_length=40, verbose_name= "emailpersonal", null=True, blank=True)
     emailwork = models.EmailField(max_length=40, verbose_name= "emailwork", null=True, blank=True)
-    celphone = models.CharField(max_length=80, verbose_name= "celphone", null=True, blank=True)
-    grade = models.CharField(max_length=40, verbose_name= "grade", null=True, blank=True)
+    celphone = models.CharField(max_length=50, verbose_name= "celphone", null=True, blank=True)
+    grade = models.CharField(max_length=100, verbose_name= "grade", null=True, blank=True)
     snilevel = models.CharField(max_length=40, verbose_name= "snilevel", null=True, blank=True)
 
     #Añade automaticamente la Fecha de creacion

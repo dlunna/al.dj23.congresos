@@ -5,11 +5,11 @@ from django.urls import path
 from .views import MyRegisterListView, MyRegisterDetailView, MyRegisterCreateView, MyRegisterUpdateView, MyRegisterDeleteView, BotView
 
 myregister_patterns = ([
-    path('', MyRegisterListView.as_view(), name="list"),
-    path('<int:pk>/', MyRegisterDetailView.as_view(), name="detail"),
-    path('nuevo', MyRegisterCreateView.as_view(), name="create"),
-    path('actualizar/<int:pk>/', MyRegisterUpdateView.as_view(), name="update"),
-    path('borrar/<int:pk>/', MyRegisterDeleteView.as_view(), name="delete"),
+    path('list', MyRegisterListView.as_view(), name="list"),
+    path('', MyRegisterCreateView.as_view(), name="create"),
     path('bot/', BotView, name="bot"),
+    #path('<int:pk>/', MyRegisterDetailView.as_view(), name="detail"),
+    #path('actualizar/<int:pk>/', MyRegisterUpdateView.as_view(), name="update"),
+    #path('borrar/<int:pk>/', MyRegisterDeleteView.as_view(), name="delete"),
     #path('lista', reg_views.captura, name="reg_nuevo"),
 ], 'myregister')

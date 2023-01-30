@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Back Admin</title>
 </head>
 <body>
-    =)
+    <p>Just for Staff !! =)</p>
     {% include 'myregister/includes/menu.html'%}
     
     <div class="container mb-4">
@@ -15,9 +15,13 @@
           <div class="row mt-3">
               <div class="col-md-9 mx-auto">
                   <p>{{item.id}} |
+                  {{item.lastname}} | 
                   {{item.name}} | 
-                  <a href="{% url 'myregister:update' item.id %}"> Editar </a> |
-                  <a href="{% url 'myregister:delete' item.id %}"> Borrar </a></p>
+                  {{item.emailwork}} | 
+                  <!--
+                  <a href="{#% url 'myregister:update' item.id %#}"> Editar </a> |
+                  <a href="{#% url 'myregister:delete' item.id %#}"> Borrar </a></p>
+                  -->
 
               </div>
           </div>

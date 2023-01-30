@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 from core import views as core_views
+from core.views import Error404View
+from django.conf.urls import handler404
+
 #from myapps.registration import views as registration_views
 from myapps.myregister.urls import myregister_patterns
 
@@ -26,7 +29,9 @@ urlpatterns = [
     path('', core_views.root, name="root"),
     path('programa/', core_views.ProgramaView, name="programa"),
     #path('registro/', registration_views.register, name="register"),
-    path('registro/', include('myapps.registration.urls')),
+    #path('registro/', include('myapps.registration.urls')),
     #path('miregistro/', include('myapps.myregister.urls')),
-    path('miregistro/', include(myregister_patterns) ),
+    path('registro/', include(myregister_patterns) ),
 ]
+
+handler404 = Error404View.as_view()

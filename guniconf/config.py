@@ -1,4 +1,4 @@
-command= '/var/www/pyfy/2021/al.dj21.home/venv'
-pythonpath = '/var/www/pyfy/2021/al.dj21.home/project'
+command= '/var/www/pyfy/2023/al.dj23.congresos/venv'
+pythonpath = '/var/www/pyfy/2023/al.dj23.congresos/project'
 bind = 'localhost:8888'
 workers = 3

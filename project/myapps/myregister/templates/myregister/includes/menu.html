@@ -1,17 +1,20 @@
 {% if request.user.is_staff %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <span class="navbar-brand" href="#"><i>Administrar</i></span>
+    <!--<span class="navbar-brand" href="#"><i>Administrar</i></span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nep" aria-controls="nep" aria-expanded="false">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button>-->
     <div class="collapse navbar-collapse" id="nep">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'myregister:create' %}"><i>Crear página</i></a>
+          <a class="nav-link" href="{% url 'root' %}"><i>Inicio</i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'myregister:list' %}"><i>Listar páginas</i></a>
+          <a class="nav-link" href="{% url 'myregister:create' %}"><i>Añadir registro</i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'myregister:list' %}"><i>Listar registros</i></a>
         </li>
       </ul>
     </div>

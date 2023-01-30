@@ -26,8 +26,9 @@ SECRET_KEY = 'django-insecure-jzbwb-ty!17$ne(73b^8te8t$ua2y!h-v%f2rh8_pn)llmj_c3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['200.79.182.81','127.0.0.1', 'localhost']
-
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+# necesario para el proxy inverso
+CSRF_TRUSTED_ORIGINS = ['https://encuentrosni.upp.edu.mx']
 
 # Application definition
 
@@ -39,11 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'myapps.registration.apps.RegistrationConfig',
+    #'myapps.registration.apps.RegistrationConfig',
     'myapps.myregister.apps.MyRegisterConfig',
     #
-    'ckeditor',
-
+    #'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -80,12 +80,30 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+'''
+DATABASES = {  
+    'default': {  
+        'ENGINE': 'django.db.backends.mysql',  
+        'NAME': 'user',  
+        'USER': 'user',  
+        'PASSWORD': '1234',  
+        'HOST': '127.0.0.1',  
+        'PORT': '3306',  
+        #'OPTIONS': {  
+        #    'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
+        #}  
+    }  
+}  
+'''
 
 
 # Password validation
@@ -123,6 +141,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+# habilitar en el deploy
+# python manage.py collectstatic
+#STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
