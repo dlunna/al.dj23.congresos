@@ -10,5 +10,5 @@ def ProgramaView (request):
     return render(request, "myregister/programa.html")
 
 class Error404View(TemplateView):
-    template_name = "error404.html"
+    template_name = "core/error404.html"
 
